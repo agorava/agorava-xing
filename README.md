@@ -1,4 +1,4 @@
 agorava-xing
 ============
 
-XING Connector for Agorava
+Agorava module to connect to XING
