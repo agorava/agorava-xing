@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="users">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="user"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="user">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="id"/>
+        <xs:element ref="first_name"/>
+        <xs:element ref="last_name"/>
+        <xs:element ref="display_name"/>
+        <xs:element ref="page_name"/>
+        <xs:element ref="employment_status"/>
+        <xs:element ref="gender"/>
+        <xs:element ref="birth_date"/>
+        <xs:element ref="active_email"/>
+        <xs:element ref="time_zone"/>
+        <xs:element ref="premium_services"/>
+        <xs:element ref="badges"/>
+        <xs:element ref="wants"/>
+        <xs:element ref="haves"/>
+        <xs:element ref="interests"/>
+        <xs:element ref="organisation_member"/>
+        <xs:element ref="languages"/>
+        <xs:element ref="private_address"/>
+        <xs:element ref="business_address"/>
+        <xs:element ref="web_profiles"/>
+        <xs:element ref="instant_messaging_accounts"/>
+        <xs:element ref="professional_experience"/>
+        <xs:element ref="educational_background"/>
+        <xs:element ref="photo_urls"/>
+        <xs:element ref="permalink"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="id" type="xs:NMTOKEN"/>
+  <xs:element name="first_name" type="xs:NCName"/>
+  <xs:element name="last_name" type="xs:NCName"/>
+  <xs:element name="display_name" type="xs:string"/>
+  <xs:element name="page_name" type="xs:NCName"/>
+  <xs:element name="employment_status" type="xs:NCName"/>
+  <xs:element name="gender" type="xs:NCName"/>
+  <xs:element name="birth_date">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="day"/>
+        <xs:element ref="month"/>
+        <xs:element ref="year"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="day" type="xs:integer"/>
+  <xs:element name="month" type="xs:integer"/>
+  <xs:element name="year" type="xs:integer"/>
+  <xs:element name="active_email" type="xs:string"/>
+  <xs:element name="time_zone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="utc_offset"/>
+        <xs:element ref="name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="utc_offset" type="xs:decimal"/>
+  <xs:element name="premium_services">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="badges">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="wants" type="xs:string"/>
+  <xs:element name="haves" type="xs:string"/>
+  <xs:element name="interests" type="xs:string"/>
+  <xs:element name="organisation_member" type="xs:string"/>
+  <xs:element name="languages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="en"/>
+        <xs:element ref="fr"/>
+        <xs:element ref="de"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="en">
+    <xs:complexType>
+      <xs:attribute name="nil" use="required" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fr">
+    <xs:complexType>
+      <xs:attribute name="nil" use="required" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="de">
+    <xs:complexType>
+      <xs:attribute name="nil" use="required" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="private_address">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="street"/>
+        <xs:element ref="zip_code"/>
+        <xs:element ref="city"/>
+        <xs:element ref="province"/>
+        <xs:element ref="country"/>
+        <xs:element ref="email"/>
+        <xs:element ref="phone"/>
+        <xs:element ref="fax"/>
+        <xs:element ref="mobile_phone"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="business_address">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="street"/>
+        <xs:element ref="zip_code"/>
+        <xs:element ref="city"/>
+        <xs:element ref="province"/>
+        <xs:element ref="country"/>
+        <xs:element ref="email"/>
+        <xs:element ref="phone"/>
+        <xs:element ref="fax"/>
+        <xs:element ref="mobile_phone"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="web_profiles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="blog"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="instant_messaging_accounts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="icq"/>
+        <xs:element ref="skype"/>
+        <xs:element ref="msn"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="icq" type="xs:NMTOKEN"/>
+  <xs:element name="skype" type="xs:NCName"/>
+  <xs:element name="msn" type="xs:string"/>
+  <xs:element name="professional_experience">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="primary_company"/>
+        <xs:element ref="non_primary_companies"/>
+        <xs:element ref="awards"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="primary_company">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="url"/>
+        <xs:element ref="tag"/>
+        <xs:element ref="company_size"/>
+        <xs:element ref="industry"/>
+        <xs:element ref="title"/>
+        <xs:element ref="career_level"/>
+        <xs:element ref="description"/>
+        <xs:element ref="begin_date"/>
+        <xs:element ref="end_date"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="non_primary_companies">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="non_primary_company"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="non_primary_company">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name"/>
+        <xs:element ref="url"/>
+        <xs:element ref="tag"/>
+        <xs:element ref="company_size"/>
+        <xs:element ref="industry"/>
+        <xs:element ref="title"/>
+        <xs:element ref="career_level"/>
+        <xs:element ref="description"/>
+        <xs:element ref="begin_date"/>
+        <xs:element ref="end_date"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="awards">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="award"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="award">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="url"/>
+        <xs:element ref="name"/>
+        <xs:element ref="date_awarded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="date_awarded" type="xs:integer"/>
+  <xs:element name="educational_background">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="qualifications"/>
+        <xs:element ref="schools"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="qualifications">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="qualification"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="qualification" type="xs:string"/>
+  <xs:element name="schools">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="school"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="school">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="begin_date"/>
+        <xs:element ref="end_date"/>
+        <xs:element ref="notes"/>
+        <xs:element ref="subject"/>
+        <xs:element ref="degree"/>
+        <xs:element ref="name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="notes">
+    <xs:complexType>
+      <xs:attribute name="nil" use="required" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="subject">
+    <xs:complexType>
+      <xs:attribute name="nil" use="required" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="degree">
+    <xs:complexType>
+      <xs:attribute name="nil" use="required" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="photo_urls">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="large"/>
+        <xs:element ref="maxi_thumb"/>
+        <xs:element ref="medium_thumb"/>
+        <xs:element ref="mini_thumb"/>
+        <xs:element ref="thumb"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="large" type="xs:anyURI"/>
+  <xs:element name="maxi_thumb" type="xs:anyURI"/>
+  <xs:element name="medium_thumb" type="xs:anyURI"/>
+  <xs:element name="mini_thumb" type="xs:anyURI"/>
+  <xs:element name="thumb" type="xs:anyURI"/>
+  <xs:element name="permalink" type="xs:anyURI"/>
+  <xs:element name="name" type="xs:string"/>
+  <xs:element name="street">
+    <xs:complexType mixed="true">
+      <xs:attribute name="nil" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="zip_code">
+    <xs:complexType mixed="true">
+      <xs:attribute name="nil" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="city" type="xs:NCName"/>
+  <xs:element name="province" type="xs:NCName"/>
+  <xs:element name="country" type="xs:NCName"/>
+  <xs:element name="email" type="xs:string"/>
+  <xs:element name="phone">
+    <xs:complexType mixed="true">
+      <xs:attribute name="nil" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fax">
+    <xs:complexType>
+      <xs:attribute name="nil" use="required" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="mobile_phone" type="xs:string"/>
+  <xs:element name="blog">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="blog"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="url">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:anyURI">
+          <xs:attribute name="nil" type="xs:boolean"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="tag" type="xs:string"/>
+  <xs:element name="company_size" type="xs:string"/>
+  <xs:element name="industry" type="xs:NCName"/>
+  <xs:element name="title" type="xs:string"/>
+  <xs:element name="career_level">
+    <xs:complexType mixed="true">
+      <xs:attribute name="nil" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="description">
+    <xs:complexType mixed="true">
+      <xs:attribute name="nil" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="begin_date">
+    <xs:complexType mixed="true">
+      <xs:attribute name="nil" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="end_date">
+    <xs:complexType mixed="true">
+      <xs:attribute name="nil" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

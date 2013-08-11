@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xing.xsd">
+  <user>
+    <id>NMTOKEN</id>
+    <first_name>NCName</first_name>
+    <last_name>NCName</last_name>
+    <display_name>display_name</display_name>
+    <page_name>NCName</page_name>
+    <employment_status>NCName</employment_status>
+    <gender>NCName</gender>
+    <birth_date>
+      <day>0</day>
+      <month>0</month>
+      <year>0</year>
+    </birth_date>
+    <active_email>active_email</active_email>
+    <time_zone>
+      <utc_offset>0.0</utc_offset>
+      <name>name</name>
+    </time_zone>
+    <premium_services/>
+    <badges/>
+    <wants>wants</wants>
+    <haves>haves</haves>
+    <interests>interests</interests>
+    <organisation_member>organisation_member</organisation_member>
+    <languages>
+      <en nil="true"/>
+      <fr nil="true"/>
+      <de nil="true"/>
+    </languages>
+    <private_address>
+      <street/>
+      <zip_code/>
+      <city>NCName</city>
+      <province>NCName</province>
+      <country>NCName</country>
+      <email>email</email>
+      <phone/>
+      <fax nil="true"/>
+      <mobile_phone>mobile_phone</mobile_phone>
+    </private_address>
+    <business_address>
+      <street/>
+      <zip_code/>
+      <city>NCName</city>
+      <province>NCName</province>
+      <country>NCName</country>
+      <email>email</email>
+      <phone/>
+      <fax nil="true"/>
+      <mobile_phone>mobile_phone</mobile_phone>
+    </business_address>
+    <web_profiles>
+      <blog/>
+    </web_profiles>
+    <instant_messaging_accounts>
+      <icq>NMTOKEN</icq>
+      <skype>NCName</skype>
+      <msn>msn</msn>
+    </instant_messaging_accounts>
+    <professional_experience>
+      <primary_company>
+        <name>name</name>
+        <url>http://tempuri.org</url>
+        <tag>tag</tag>
+        <company_size>company_size</company_size>
+        <industry>NCName</industry>
+        <title>title</title>
+        <career_level/>
+        <description/>
+        <begin_date/>
+        <end_date/>
+      </primary_company>
+      <non_primary_companies>
+        <non_primary_company>
+          <name>name</name>
+          <url>http://tempuri.org</url>
+          <tag>tag</tag>
+          <company_size>company_size</company_size>
+          <industry>NCName</industry>
+          <title>title</title>
+          <career_level/>
+          <description/>
+          <begin_date/>
+          <end_date/>
+        </non_primary_company>
+      </non_primary_companies>
+      <awards>
+        <award>
+          <url>http://tempuri.org</url>
+          <name>name</name>
+          <date_awarded>0</date_awarded>
+        </award>
+      </awards>
+    </professional_experience>
+    <educational_background>
+      <qualifications>
+        <qualification>qualification</qualification>
+      </qualifications>
+      <schools>
+        <school>
+          <begin_date/>
+          <end_date/>
+          <notes nil="true"/>
+          <subject nil="true"/>
+          <degree nil="true"/>
+          <name>name</name>
+        </school>
+      </schools>
+    </educational_background>
+    <photo_urls>
+      <large>http://tempuri.org</large>
+      <maxi_thumb>http://tempuri.org</maxi_thumb>
+      <medium_thumb>http://tempuri.org</medium_thumb>
+      <mini_thumb>http://tempuri.org</mini_thumb>
+      <thumb>http://tempuri.org</thumb>
+    </photo_urls>
+    <permalink>http://tempuri.org</permalink>
+  </user>
+</users>
