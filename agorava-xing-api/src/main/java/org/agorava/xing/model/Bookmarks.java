@@ -16,22 +16,26 @@
 
 package org.agorava.xing.model;
 
+import java.io.Serializable;
+import java.util.List;
 
 /**
- * A node of contacts
- * 
  * @author Werner Keil
- *
  */
-public class ContactsNode {
 
-	private Contacts contacts;
+public class Bookmarks implements Serializable {
 
-	public ContactsNode(Contacts contacts) {
-		this.contacts = contacts;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2518331238421954121L;
+	private List<Bookmark> bookmarks;
+
+	public Bookmarks(List<Bookmark> bookmarks) {
+		this.bookmarks = bookmarks;
 	}
 
-	public Contacts getContacts() {
-		return contacts;
+	public List<Bookmark> getBookmarks() {
+		return bookmarks;
 	}
 }

@@ -16,22 +16,25 @@
 
 package org.agorava.xing.model;
 
-
 /**
- * A node of contacts
- * 
  * @author Werner Keil
- *
  */
-public class ContactsNode {
 
-	private Contacts contacts;
+public class Bookmark {
 
-	public ContactsNode(Contacts contacts) {
-		this.contacts = contacts;
+	private String createdAt;
+	private User user;
+
+	public Bookmark(String createdAt, User user) {
+		this.createdAt = createdAt;
+		this.user = user;
 	}
 
-	public Contacts getContacts() {
-		return contacts;
+	public String getCreatedAt() {
+		return createdAt;
+	}
+
+	public User getUser() {
+		return user;
 	}
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Agorava
+ * Copyright 2013-2014 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 
 package org.agorava.xing.model;
 
-import org.agorava.core.api.UserProfile;
+import org.agorava.spi.UserProfile;
 
 /**
  * Model class containing a user's XING profile information.
