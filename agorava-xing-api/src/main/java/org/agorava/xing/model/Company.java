@@ -18,6 +18,8 @@ package org.agorava.xing.model;
 
 import java.util.Map;
 
+import org.agorava.xing.function.HasName;
+
 /**
  * Model class representing a company
  * @author Werner Keil

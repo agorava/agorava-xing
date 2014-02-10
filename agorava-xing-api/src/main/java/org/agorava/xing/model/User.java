@@ -19,6 +19,8 @@ package org.agorava.xing.model;
 import java.util.List;
 import java.util.Map;
 
+import org.agorava.xing.function.HasId;
+
 /**
  * Model class representing a user.
  * @author Werner Keil

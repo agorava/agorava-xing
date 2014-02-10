@@ -18,6 +18,8 @@ package org.agorava.xing.model;
 
 import java.util.Date;
 
+import org.agorava.xing.function.HasFinalId;
+
 /**
  * Model class representing a message
  * @author Werner Keil

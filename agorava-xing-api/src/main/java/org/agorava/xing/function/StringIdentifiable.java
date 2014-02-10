@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Agorava
+ * Copyright 2014 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,22 +14,24 @@
  * limitations under the License.
  */
 
-package org.agorava.xing.model;
+package org.agorava.xing.function;
 
 /**
- * Generic abstract item with an id.
+ * Provides String Id to implementations
  *
+ * <p>There is no requirement that a distinct result be returned each
+ * time the supplier is invoked, unless implementing classes enforce it.
+ * 
+ * <p>This is a <a href="http://download.java.net/jdk8/docs/api/java/util/function/package-summary.html">functional interface</a>
+ * whose functional method is {@link #getId()}.
+ * 
  * @author Werner Keil
  */
-abstract class HasId {
-
-	protected String id;
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
+//equivalent to @FunctionalInterface
+public interface StringIdentifiable {
+	
+    /**
+     * @return an Id
+     */
+    String getId();
 }

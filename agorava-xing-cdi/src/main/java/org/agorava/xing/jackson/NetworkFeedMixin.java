@@ -3,15 +3,15 @@ package org.agorava.xing.jackson;
 import java.util.Date;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonCreator;
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.agorava.xing.model.Actor;
 import org.agorava.xing.model.FeedObject;
 import org.agorava.xing.model.Group;
 import org.agorava.xing.model.MetaComment;
 import org.agorava.xing.model.MetaLike;
-import org.agorava.xing.model.NetworkFeed.PossibleActions;
+import org.agorava.xing.model.NetworkFeed.PossibleAction;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 abstract class NetworkFeedMixin {
@@ -45,7 +45,7 @@ abstract class NetworkFeedMixin {
 	String aggregatedBy;
 
 	@JsonProperty("possible_actions")
-	List<PossibleActions> possibleActions;
+	List<PossibleAction> possibleActions;
 
 	@JsonProperty("created_at")
 	Date createdAt;

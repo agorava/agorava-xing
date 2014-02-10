@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package org.agorava.xing.model;
+package org.agorava.xing.function;
 
 /**
  * Generic abstract for an item that was created somewhere
  *
  * @author Werner Keil
  */
-abstract class WasCreatedSomewhere {
+public abstract class WasCreatedSomewhere {
 	
     protected String createdAt;
 

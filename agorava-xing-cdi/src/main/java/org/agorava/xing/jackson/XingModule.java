@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Agorava
+ * Copyright 2014 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,68 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.agorava.xing.jackson;
 
-import org.codehaus.jackson.Version;
-import org.codehaus.jackson.map.module.SimpleModule;
-import org.agorava.xing.model.Actor;
-import org.agorava.xing.model.Award;
-import org.agorava.xing.model.BirthDate;
-import org.agorava.xing.model.BusinessAddress;
-import org.agorava.xing.model.Comment;
-import org.agorava.xing.model.CommentsNode;
-import org.agorava.xing.model.Company;
-import org.agorava.xing.model.ContactPaths;
-import org.agorava.xing.model.ContactPathsNode;
-import org.agorava.xing.model.ContactRequest;
-import org.agorava.xing.model.ContactRequests;
-import org.agorava.xing.model.Contacts;
-import org.agorava.xing.model.ContactsNode;
-import org.agorava.xing.model.Conversation;
-import org.agorava.xing.model.ConversationNode;
-import org.agorava.xing.model.Conversations;
-import org.agorava.xing.model.ConversationsNode;
-import org.agorava.xing.model.EducationalBackground;
-import org.agorava.xing.model.FeedObject;
-import org.agorava.xing.model.GeoCode;
-import org.agorava.xing.model.Group;
-import org.agorava.xing.model.Job;
-import org.agorava.xing.model.JobNode;
-import org.agorava.xing.model.Jobs;
-import org.agorava.xing.model.JobsNode;
-import org.agorava.xing.model.Like;
-import org.agorava.xing.model.LikesNode;
-import org.agorava.xing.model.Message;
-import org.agorava.xing.model.MessageNode;
-import org.agorava.xing.model.Messages;
-import org.agorava.xing.model.MessagesNode;
-import org.agorava.xing.model.MetaComment;
-import org.agorava.xing.model.MetaLike;
-import org.agorava.xing.model.NearbyItems;
-import org.agorava.xing.model.NearbyItemsNode;
-import org.agorava.xing.model.NearbyUsers;
-import org.agorava.xing.model.NetworkActivitiesNode;
-import org.agorava.xing.model.NetworkFeed;
-import org.agorava.xing.model.Users;
-import org.agorava.xing.model.PhotoUrls;
-import org.agorava.xing.model.PrivateAddress;
-import org.agorava.xing.model.ProfessionalExperience;
-import org.agorava.xing.model.Recommendation;
-import org.agorava.xing.model.Recommendations;
-import org.agorava.xing.model.RecommendationsNode;
-import org.agorava.xing.model.School;
-import org.agorava.xing.model.SharedContactsNode;
-import org.agorava.xing.model.TimeZone;
-import org.agorava.xing.model.User;
-import org.agorava.xing.model.Visit;
-import org.agorava.xing.model.Visits;
-import org.agorava.xing.model.XingProfile;
-import org.agorava.xing.model.XingProfiles;
+import org.agorava.xing.model.*;
 
-import com.twentyzen.webzunder.server.share.model.foursquare.Location;
+import com.fasterxml.jackson.core.Version;
+import com.fasterxml.jackson.databind.module.SimpleModule;
+
 
 /**
  * Jackson module for registering mixin annotations against Xing model classes.
+ * @author Werner Keil
  */
 public class XingModule extends SimpleModule {
 
@@ -92,7 +42,7 @@ public class XingModule extends SimpleModule {
 		context.setMixInAnnotations(Award.class, AwardMixin.class);
 		context.setMixInAnnotations(Company.class, CompanyMixin.class);
 		context.setMixInAnnotations(Conversation.class, ConversationMixin.class);
-		context.setMixInAnnotations(ConversationNode.class, ConversationNodeMixin.class);
+		//context.setMixInAnnotations(ConversationNode.class, ConversationNodeMixin.class);
 		context.setMixInAnnotations(Conversations.class, ConversationsMixin.class);
 		context.setMixInAnnotations(ConversationsNode.class, ConversationsNodeMixin.class);
 		context.setMixInAnnotations(Message.class, MessageMixin.class);
@@ -110,12 +60,12 @@ public class XingModule extends SimpleModule {
 		context.setMixInAnnotations(JobNode.class, JobNodeMixin.class);
 		context.setMixInAnnotations(Jobs.class, JobsMixin.class);
 		context.setMixInAnnotations(JobsNode.class, JobsNodeMixin.class);
-		context.setMixInAnnotations(GeoCode.class, GeoCodeMixin.class);
+		//context.setMixInAnnotations(GeoCode.class, GeoCodeMixin.class);
 		context.setMixInAnnotations(Location.class, LocationMixin.class);
 
 		context.setMixInAnnotations(Contacts.class, ContactsMixin.class);
 		context.setMixInAnnotations(ContactsNode.class, ContactsNodeMixin.class);
-		context.setMixInAnnotations(SharedContactsNode.class, SharedContactsNodeMixin.class);
+		//context.setMixInAnnotations(SharedContactsNode.class, SharedContactsNodeMixin.class);
 
 		context.setMixInAnnotations(ContactRequest.class, ContactRequestMixin.class);
 		context.setMixInAnnotations(ContactRequests.class, ContactRequestsMixin.class);
@@ -124,7 +74,7 @@ public class XingModule extends SimpleModule {
 		context.setMixInAnnotations(ContactPaths.class, ContactPathsMixin.class);
 		context.setMixInAnnotations(ContactPathsNode.class, ContactPathsNodeMixin.class);
 
-		context.setMixInAnnotations(NetworkActivitiesNode.class, NetworkActivitiesNodeMixin.class);
+		//context.setMixInAnnotations(NetworkActivitiesNode.class, NetworkActivitiesNodeMixin.class);
 		context.setMixInAnnotations(NetworkFeed.class, NetworkFeedMixin.class);
 		context.setMixInAnnotations(MetaComment.class, MetaCommentMixin.class);
 		context.setMixInAnnotations(MetaLike.class, MetaLikeMixin.class);
@@ -132,9 +82,9 @@ public class XingModule extends SimpleModule {
 		context.setMixInAnnotations(Group.class, GroupMixin.class);
 		context.setMixInAnnotations(FeedObject.class, FeedObjectMixin.class);
 		context.setMixInAnnotations(Comment.class, CommentMixin.class);
-		context.setMixInAnnotations(CommentsNode.class, CommentsMixin.class);
+		//context.setMixInAnnotations(CommentsNode.class, CommentsMixin.class);
 		context.setMixInAnnotations(Like.class, LikeMixin.class);
-		context.setMixInAnnotations(LikesNode.class, LikesNodeMixin.class);
+		//context.setMixInAnnotations(LikesNode.class, LikesNodeMixin.class);
 		context.setMixInAnnotations(Visit.class, VisitMixin.class);
 		context.setMixInAnnotations(Visits.class, VisitsMixin.class);
 		context.setMixInAnnotations(Recommendation.class, RecommendationMixin.class);

@@ -16,6 +16,8 @@
 
 package org.agorava.xing.model;
 
+import org.agorava.xing.function.WasCreatedSomewhere;
+
 /**
  * Model class representing an actor
  * 

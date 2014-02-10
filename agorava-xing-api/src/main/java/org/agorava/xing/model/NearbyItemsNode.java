@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Agorava
+ * Copyright 2014 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,20 +16,24 @@
 
 package org.agorava.xing.model;
 
+import java.io.Serializable;
+
 /**
- * Generic abstract item with a type and id.
- *
  * @author Werner Keil
  */
-abstract class HasTypeAndId extends HasId {
+public class NearbyItemsNode implements Serializable {
 
-	private String type;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8733709426546520072L;
+	private final NearbyItems nearbyItems;
 
-	public String getType() {
-		return type;
+	public NearbyItemsNode(NearbyItems nearbyItems) {
+		this.nearbyItems = nearbyItems;
 	}
-
-	public void setType(String type) {
-		this.type = type;
+	
+	public NearbyItems getNearbyItems() {
+		return nearbyItems;
 	}
 }

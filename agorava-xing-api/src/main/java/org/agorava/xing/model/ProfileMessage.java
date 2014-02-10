@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Agorava
+ * Copyright 2014 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,36 +16,30 @@
 
 package org.agorava.xing.model;
 
+import java.io.Serializable;
+
 /**
- * Generic abstract item with a name.
- *
  * @author Werner Keil
  */
-abstract class HasName {
+public class ProfileMessage implements Serializable {
 
-	protected String name;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8658311463754562228L;
+	private final String updatedAt;
+	private final String message;
 
-    /**
-     * Gets the value of the name property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getName() {
-        return name;
-    }
+	public ProfileMessage(String updatedAt, String message) {
+		this.updatedAt = updatedAt;
+		this.message = message;
+	}
 
-    /**
-     * Sets the value of the name property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
+	public String getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public String getMessage() {
+		return message;
+	}
 }

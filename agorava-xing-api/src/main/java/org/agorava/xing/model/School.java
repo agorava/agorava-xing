@@ -15,6 +15,8 @@
  */
 package org.agorava.xing.model;
 
+import org.agorava.xing.function.HasName;
+
 /**
  * Model class representing school education
  * 

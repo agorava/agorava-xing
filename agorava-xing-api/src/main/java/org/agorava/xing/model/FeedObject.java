@@ -18,11 +18,14 @@ package org.agorava.xing.model;
 
 import java.util.Date;
 
+import org.agorava.xing.function.HasTypeAndId;
+import org.agorava.xing.function.Nameable;
+
 /**
  * Model class representing a feed object
  * @author Werner Keil
  */
-public class FeedObject extends HasTypeAndId {
+public class FeedObject extends HasTypeAndId implements Nameable {
 
 	private User creator;
 	private Date createdAt;

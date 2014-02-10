@@ -25,7 +25,7 @@ package org.agorava.xing.model;
  */
 public class ContactsNode {
 
-	private Contacts contacts;
+	private final Contacts contacts;
 
 	public ContactsNode(Contacts contacts) {
 		this.contacts = contacts;

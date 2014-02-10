@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Agorava
+ * Copyright 2014 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,20 +16,26 @@
 
 package org.agorava.xing.model;
 
+import java.io.Serializable;
+import java.util.List;
+
 /**
- * Generic abstract item with an id that must be set.
- *
  * @author Werner Keil
  */
-public class HasFinalId {
+public class Visits implements Serializable {
 
-	protected final String id;
-	
-	public HasFinalId(String id) {
-		this.id = id;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6251501545919600480L;
+	private List<Visit> visits;
+
+	public List<Visit> getVisits() {
+		return visits;
 	}
 
-	public String getId() {
-		return id;
+	public Visits(List<Visit> visits) {
+		this.visits = visits;
 	}
+
 }
