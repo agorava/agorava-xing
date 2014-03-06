@@ -49,11 +49,11 @@
                 <artifactId>agorava-xing-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
-            <!--dependency>
+            <dependency>
                 <groupId>org.agorava</groupId>
                 <artifactId>agorava-xing-cdi</artifactId>
                 <version>${project.version}</version>
-            </dependency-->
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

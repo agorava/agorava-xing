@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Agorava
+ * Copyright 2014 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,13 +19,13 @@ package org.agorava.xing.model;
 import java.util.List;
 import java.util.Map;
 
-import org.agorava.xing.function.HasId;
+import org.agorava.xing.function.HasFinalId;
 
 /**
  * Model class representing a user.
  * @author Werner Keil
  */
-public class User extends HasId {
+public class User extends HasFinalId {
 	private String firstName;
 	private String lastName;
 	private String displayName;
@@ -51,7 +51,7 @@ public class User extends HasId {
 	private PhotoUrls photoUrls;
 
 	public User(String id) {
-		this.id = id;
+		super(id);
 	}
 
 	public String getFirstName() {
@@ -243,7 +243,15 @@ public class User extends HasId {
 	}
 
 	public static enum LanguageLevel {
-		BASIC, GOOD, FLUENT, NATIVE
+		BASIC, GOOD, FLUENT, NATIVE;
+		
+		 @Override
+		    public String toString() {
+		        switch (this) {
+		            default:
+		                return this.name().toLowerCase();  //.replace('_', '-');
+		        }
+		    }
 	}
 
 	public static enum Language {
