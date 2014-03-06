@@ -34,6 +34,20 @@
         <module>agorava-xing-cdi</module>
     </modules>
 
+	 <developers>
+	    <developer>
+	      <name>Werner Keil</name>
+	      <email>werner(at)catmedia.us</email>
+	      <url>http://twitter.com/wernerkeil</url>
+	      <organization>Agorava</organization>
+	      <organizationUrl>http://agorava.org</organizationUrl>
+	      <roles>
+	        <role>Module Lead</role>
+	        <role>Developer</role>
+	      </roles>
+	      <timezone>CET</timezone>
+	    </developer>
+	  </developers>
 
     <dependencyManagement>
         <dependencies>

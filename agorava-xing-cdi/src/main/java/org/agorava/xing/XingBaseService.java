@@ -40,7 +40,7 @@ public abstract class XingBaseService extends ProviderApiService {
     protected static final String BASE_URL = API_ROOT + "people/";
 
     public Map<String, String> buildPagingParametersWithCount(int page, int pageSize, long sinceId, long maxId) {
-        Map<String, String> parameters = new HashMap<String, String>();
+        final Map<String, String> parameters = new HashMap<String, String>();
         parameters.put("page", String.valueOf(page));
         parameters.put("count", String.valueOf(pageSize));
         if (sinceId > 0) {
