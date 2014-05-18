@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.agorava.xing.impl;
+package org.agorava.xing;
 
 import org.agorava.xing.Xing;
 
