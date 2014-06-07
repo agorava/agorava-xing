@@ -33,7 +33,7 @@ public interface GroupService {
      *
      * @param groupId the ID of the group
      * @return a {@link Group} object
-     * @throws ApiException if there is an error while communicating with Facebook.
+     * @throws AgoravaException if there is an error while communicating with Facebook.
      */
     Group getGroup(String groupId);
 
@@ -42,7 +42,7 @@ public interface GroupService {
      *
      * @param groupId the group ID
      * @return an array of bytes containing the group's image.
-     * @throws ApiException if there is an error while communicating with Facebook.
+     * @throws AgoravaException if there is an error while communicating with Facebook.
      */
     byte[] getGroupImage(String groupId);
 
