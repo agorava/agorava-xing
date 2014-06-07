@@ -33,7 +33,7 @@ public interface UserService extends UserProfileService {
      * Retrieves the profile for the authenticated user.
      *
      * @return the user's profile information.
-     * @throws ApiException                  if there is an error while communicating with Facebook.
+     * @throws AgoravaException                  if there is an error while communicating with Facebook.
      * @throws MissingAuthorizationException if FacebookTemplate was not created with an access token.
      */
     XingProfile getUserProfile();
@@ -43,7 +43,7 @@ public interface UserService extends UserProfileService {
      *
      * @param userId the Facebook user ID to retrieve profile data for.
      * @return the user's profile information.
-     * @throws ApiException if there is an error while communicating with Facebook.
+     * @throws AgoravaException if there is an error while communicating with Facebook.
      */
     XingProfile getUserProfile(String userId);
 
@@ -51,7 +51,7 @@ public interface UserService extends UserProfileService {
      * Retrieves the user's profile image. Returns the image in Facebook's "normal" type.
      *
      * @return an array of bytes containing the user's profile image.
-     * @throws ApiException                  if there is an error while communicating with Facebook.
+     * @throws AgoravaException                  if there is an error while communicating with Facebook.
      * @throws MissingAuthorizationException if FacebookTemplate was not created with an access token.
      */
     byte[] getUserProfileImage();
@@ -61,7 +61,7 @@ public interface UserService extends UserProfileService {
      *
      * @param userId the Facebook user ID.
      * @return an array of bytes containing the user's profile image.
-     * @throws ApiException if there is an error while communicating with Facebook.
+     * @throws AgoravaException if there is an error while communicating with Facebook.
      */
     byte[] getUserProfileImage(String userId);
 
@@ -69,7 +69,7 @@ public interface UserService extends UserProfileService {
      * Retrieves a list of permissions that the application has been granted for the authenticated user.
      *
      * @return the permissions granted for the user.
-     * @throws ApiException                  if there is an error while communicating with Facebook.
+     * @throws AgoravaException                  if there is an error while communicating with Facebook.
      * @throws MissingAuthorizationException if FacebookTemplate was not created with an access token.
      */
     List<String> getUserPermissions();

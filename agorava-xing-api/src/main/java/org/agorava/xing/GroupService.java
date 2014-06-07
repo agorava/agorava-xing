@@ -51,7 +51,7 @@ public interface GroupService {
      *
      * @param query the search query (e.g., "Spring User Group")
      * @return a list of {@link Group}s matching the search query
-     * @throws ApiException if there is an error while communicating with Facebook.
+     * @throws AgoravaException if there is an error while communicating with Facebook.
      */
     List<Group> search(String query);
 
@@ -62,7 +62,7 @@ public interface GroupService {
      * @param offset the offset into the matching groups list
      * @param limit  the maximum number of groups to return
      * @return a list of {@link Group}s matching the search query
-     * @throws ApiException if there is an error while communicating with Facebook.
+     * @throws AgoravaException if there is an error while communicating with Facebook.
      */
     List<Group> search(String query, int offset, int limit);
 
