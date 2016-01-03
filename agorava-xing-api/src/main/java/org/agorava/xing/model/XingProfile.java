@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2014 Agorava
+ * Copyright 2013-2016 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,11 +17,11 @@
 package org.agorava.xing.model;
 
 import org.agorava.spi.UserProfile;
+import org.agorava.xing.Xing;
 
 /**
  * Model class containing a user's XING profile information.
  *
- * @author Craig Walls
  * @author Werner Keil
  */
 public class XingProfile extends UserProfile {
@@ -52,7 +52,7 @@ public class XingProfile extends UserProfile {
             String activeEmail,
             String displayName
     ) {
-        super(id);
+        super(id, Xing.class);
         this.firstName = firstName;
         this.lastName = lastName;
         this.permalink = permalink;
@@ -160,5 +160,16 @@ public class XingProfile extends UserProfile {
 	@Override
 	public String getProfileImageUrl() {
 		return getPhotoUrls().getLarge();
+	}
+
+	@Override
+	public String getLoginName() {
+		// TODO Auto-generated method stub shall we use displayName or other field?
+		return null;
+	}
+
+	@Override
+	public String getEmail() {
+		return activeEmail;
 	}
 }
