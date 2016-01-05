@@ -29,8 +29,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>agorava-xing-api</module> <!--
-        <module>agorava-xing-cdi</module> -->
+        <module>agorava-xing-api</module>
+        <module>agorava-xing-cdi</module>
     </modules>
 
 	 <developers>
@@ -48,7 +48,7 @@
 	    </developer>
 	  </developers>
 
-    <dependencyManagement>
+      <dependencyManagement>
         <dependencies>
         	<dependency>
                 <groupId>org.agorava</groupId>
@@ -68,18 +68,18 @@
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
-    </dependencyManagement>
+      </dependencyManagement>
 
-    <scm>
+      <scm>
         <connection>scm:git:git://github.com/keilw/agorava-xing.git</connection>
         <developerConnection>scm:git:git@github.com:keilw/agorava-xing.git</developerConnection>
         <url>http://github.com/keilw/agorava-xing</url>
         <tag>HEAD</tag>
-    </scm>
+      </scm>
     
-    <!-- Additional repositories -->
-	<!-- Helps to resolve Parent POM and Snapshot artifacts -->
-	<repositories>
+      <!-- Additional repositories -->
+	  <!-- Helps to resolve Parent POM and Snapshot artifacts -->
+	  <repositories>
 		<repository>
 			<id>jcenter</id>
 			<name>JCenter</name>
@@ -101,5 +101,5 @@
 			<name>libs-snapshot</name>
 			<url>http://oss.jfrog.org/artifactory/libs-snapshot</url>
 		</repository>
-	</repositories>
+	  </repositories>
 </project>

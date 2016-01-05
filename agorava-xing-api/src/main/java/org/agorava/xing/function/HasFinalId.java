@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Agorava
+ * Copyright 2016 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,15 @@
 
 package org.agorava.xing.function;
 
+import org.agorava.api.function.Identifiable;
+
 /**
  * Generic abstract item with an id that must be set.
  *
  * @author Werner Keil
  */
-public class HasFinalId implements StringIdentifiable {
+@SuppressWarnings("serial")
+public class HasFinalId implements Identifiable {
 
 	protected final String id;
 	

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Agorava
+ * Copyright 2016 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,8 @@ package org.agorava.xing.model;
 
 import java.util.Date;
 
+import org.agorava.api.function.Nameable;
 import org.agorava.xing.function.HasTypeAndId;
-import org.agorava.xing.function.Nameable;
 
 /**
  * Model class representing a feed object
