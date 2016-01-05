@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Agorava
+ * Copyright 2016 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package org.agorava.xing;
 
 import org.agorava.api.oauth.OAuthService;
+import org.agorava.api.rest.Api;
 import org.agorava.spi.ProviderApiService;
 import org.agorava.xing.Xing;
 
@@ -31,7 +32,7 @@ import java.util.Map;
  * @author Werner Keil
  */
 
-public abstract class XingBaseService extends ProviderApiService {
+public abstract class XingBaseService extends ProviderApiService implements Api {
 
     protected static final char MULTI_VALUE_SEPARATOR = ',';
 
@@ -77,5 +78,9 @@ public abstract class XingBaseService extends ProviderApiService {
     @Override
     public OAuthService getService() {
         return service;
+    }
+    
+    public String getBaseUrl() {
+    	return BASE_URL;
     }
 }
