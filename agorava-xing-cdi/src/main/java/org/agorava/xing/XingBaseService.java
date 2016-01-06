@@ -16,6 +16,8 @@
 
 package org.agorava.xing;
 
+import static org.agorava.xing.XingApi.API_ROOT;
+
 import org.agorava.api.oauth.OAuthService;
 import org.agorava.api.rest.Api;
 import org.agorava.spi.ProviderApiService;
@@ -35,8 +37,6 @@ import java.util.Map;
 public abstract class XingBaseService extends ProviderApiService implements Api {
 
     protected static final char MULTI_VALUE_SEPARATOR = ',';
-
-    public static final String API_ROOT = "https://api.xing.com/v1";
     
     protected static final String BASE_URL = API_ROOT + "people/";
 

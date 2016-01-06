@@ -16,6 +16,8 @@
 
 package org.agorava.xing.impl;
 
+import static org.agorava.xing.XingApi.API_ROOT;
+
 import com.fasterxml.jackson.databind.JsonNode;
 
 import org.agorava.xing.UserService;
@@ -81,5 +83,4 @@ public class XingUserServiceImpl extends XingBaseService implements UserService 
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

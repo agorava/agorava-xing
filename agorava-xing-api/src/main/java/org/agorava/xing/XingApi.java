@@ -28,14 +28,14 @@ import org.agorava.spi.ProviderConfigOauth10a;
 public class XingApi extends ProviderConfigOauth10a implements Api {
 	
 	private static final String MEDIA_NAME = "Xing";
-
-	private static final String BASE_URL = "https://api.xing.com/v1";
+	
+	public static final String API_ROOT = "https://api.xing.com/v1";
 		
-	private static final String AUTHORIZE_URL = BASE_URL + "/authorize?oauth_token=%s";
+	private static final String AUTHORIZE_URL = API_ROOT + "/authorize?oauth_token=%s";
 
-    private static final String REQUEST_TOKEN_RESOURCE = BASE_URL + "/request_token";
+    private static final String REQUEST_TOKEN_RESOURCE = API_ROOT + "/request_token";
 
-    private static final String ACCESS_TOKEN_RESOURCE = BASE_URL + "/access_token";
+    private static final String ACCESS_TOKEN_RESOURCE = API_ROOT + "/access_token";
 
     @Override
     public String getAccessTokenEndpoint() {
@@ -59,7 +59,6 @@ public class XingApi extends ProviderConfigOauth10a implements Api {
 
 	@Override
 	public String getBaseUrl() {
-		return BASE_URL;
+		return API_ROOT;
 	}
-
 }
