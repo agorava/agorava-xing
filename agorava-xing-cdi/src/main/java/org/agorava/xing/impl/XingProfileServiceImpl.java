@@ -63,6 +63,7 @@ public class XingProfileServiceImpl extends XingBaseService implements ProfileSe
 
     static final String PROFILE_URL_FULL;
 
+    //FIXME not Xing here
     static final String PEOPLE_SEARCH_URL = "https://api.linkedin.com/v1/people-search:(people:(id,first-name,last-name," +
             "headline,industry,site-standard-profile-request,public-profile-url,picture-url,summary," +
             "api-standard-profile-request))?{&keywords}{&first-name}{&last-name}{&company-name}{&current-company}{&title" +

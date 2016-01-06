@@ -28,6 +28,7 @@ import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * @author Werner Keil
@@ -35,21 +36,24 @@ import java.util.List;
 @Xing
 @Named
 public class XingUserServiceImpl extends XingBaseService implements UserService {
-
+	private static Logger LOGGER = Logger.getLogger(XingUserServiceImpl.class.getName());
 	static final String USERS_URL = API_ROOT + "/users/{id}.json";
 
     @Override
     public XingProfile getUserProfile() {
+    	LOGGER.warning("Entered getUserProfile");
         return getUserProfile("me");
     }
 
     @Override
     public XingProfile getUserProfile(String id) {
+    	LOGGER.warning("Entered getUserProfile(id)");
         return (XingProfile) getService().getSession().getUserProfile();
     }
 
     @Override
     public List<String> getUserPermissions() {
+    	LOGGER.warning("Entered getUserPermissions");
         JsonNode responseNode = getService().get("https://api.xing.com/v1/users/me", JsonNode.class);
         return deserializePermissionsNodeToList(responseNode);
     }
