@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Agorava
+ * Copyright 2016 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,9 +14,6 @@
  * limitations under the License.
  */
 
-/**
- *
- */
 package org.agorava.xing.impl;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -37,7 +34,7 @@ import java.util.List;
  */
 @Xing
 @Named
-public class UserServiceImpl extends XingBaseService implements UserService {
+public class XingUserServiceImpl extends XingBaseService implements UserService {
 
 	static final String USERS_URL = API_ROOT + "/users/{id}.json";
 

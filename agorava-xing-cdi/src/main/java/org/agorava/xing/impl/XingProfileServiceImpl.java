@@ -33,7 +33,7 @@ import org.agorava.xing.model.XingProfile;
 
 @Named
 @Xing
-public class ProfileServiceImpl extends XingBaseService implements ProfileService {
+public class XingProfileServiceImpl extends XingBaseService implements ProfileService {
 
     static {
         StringBuilder b = new StringBuilder();

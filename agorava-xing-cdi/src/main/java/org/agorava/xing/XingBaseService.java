@@ -40,6 +40,10 @@ public abstract class XingBaseService extends ProviderApiService implements Api 
     
     protected static final String BASE_URL = API_ROOT + "people/";
 
+    @Inject
+    @Xing
+    private OAuthService service;
+    
     public Map<String, String> buildPagingParametersWithCount(int page, int pageSize, long sinceId, long maxId) {
         final Map<String, String> parameters = new HashMap<String, String>();
         parameters.put("page", String.valueOf(page));
@@ -66,9 +70,6 @@ public abstract class XingBaseService extends ProviderApiService implements Api 
         return parameters;
     }
 
-    @Inject
-    @Xing
-    private OAuthService service;
 
     @Override
     public String buildAbsoluteUri(String uri) {
