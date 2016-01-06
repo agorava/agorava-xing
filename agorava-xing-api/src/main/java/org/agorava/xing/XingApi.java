@@ -17,6 +17,7 @@
 package org.agorava.xing;
 
 import org.agorava.api.oauth.Token;
+import org.agorava.api.rest.Api;
 import org.agorava.spi.ProviderConfigOauth10a;
 
 /**
@@ -24,19 +25,17 @@ import org.agorava.spi.ProviderConfigOauth10a;
  */
 
 @Xing
-public class XingApi extends ProviderConfigOauth10a {
+public class XingApi extends ProviderConfigOauth10a implements Api {
 	
 	private static final String MEDIA_NAME = "Xing";
 
-	//private static final String BASE_URL = "https://api.xing.com/v1";
-	
-    //private static final String AUTHORIZE_URL = "https://api.xing.com/v1/users/me";
-	
-	private static final String AUTHORIZE_URL = "https://api.xing.com/v1/authorize";
+	private static final String BASE_URL = "https://api.xing.com/v1";
+		
+	private static final String AUTHORIZE_URL = BASE_URL + "/authorize?oauth_token=%s";
 
-    private static final String REQUEST_TOKEN_RESOURCE = "https://api.twitter.com/oauth/request_token";
+    private static final String REQUEST_TOKEN_RESOURCE = BASE_URL + "/request_token";
 
-    private static final String ACCESS_TOKEN_RESOURCE = "https://api.xing.com/v1/request_token";
+    private static final String ACCESS_TOKEN_RESOURCE = BASE_URL + "/access_token";
 
     @Override
     public String getAccessTokenEndpoint() {
@@ -57,5 +56,10 @@ public class XingApi extends ProviderConfigOauth10a {
     public String getProviderName() {
         return MEDIA_NAME;
     }
+
+	@Override
+	public String getBaseUrl() {
+		return BASE_URL;
+	}
 
 }

@@ -59,7 +59,7 @@ public interface UserService extends UserProfileService {
     /**
      * Retrieves the user's profile image. Returns the image in Facebook's "normal" type.
      *
-     * @param userId the Facebook user ID.
+     * @param userId the Xing user ID.
      * @return an array of bytes containing the user's profile image.
      * @throws AgoravaException if there is an error while communicating with Facebook.
      */

@@ -164,8 +164,7 @@ public class XingProfile extends UserProfile {
 
 	@Override
 	public String getLoginName() {
-		// TODO Auto-generated method stub shall we use displayName or other field?
-		return null;
+		return displayName;
 	}
 
 	@Override
