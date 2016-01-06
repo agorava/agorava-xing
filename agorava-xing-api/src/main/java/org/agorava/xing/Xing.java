@@ -33,7 +33,7 @@ import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Qualifier
-@ProviderRelated("XING")
+@ProviderRelated("Xing")
 @Target({TYPE, METHOD, PARAMETER, FIELD})
 @Retention(RUNTIME)
 @Documented
