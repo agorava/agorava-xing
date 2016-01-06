@@ -23,6 +23,7 @@ import org.agorava.api.function.Nameable;
  *
  * @author Werner Keil
  */
+@SuppressWarnings("serial")
 public abstract class HasName implements Nameable {
 
 	protected String name;

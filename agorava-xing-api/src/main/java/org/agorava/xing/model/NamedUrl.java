@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Agorava
+ * Copyright 2016 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,15 @@
 
 package org.agorava.xing.model;
 
+import org.agorava.xing.function.HasName;
+
 /**
  * A named URL
  * 
  * @author Werner Keil
  *
  */
-public class NamedUrl {
+public class NamedUrl extends HasName {
 
     protected String value;
     protected String name;
@@ -50,29 +52,4 @@ public class NamedUrl {
     public void setValue(String value) {
         this.value = value;
     }
-
-    /**
-     * Gets the value of the name property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Sets the value of the name property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
-
 }

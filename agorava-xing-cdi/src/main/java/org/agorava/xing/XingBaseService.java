@@ -37,8 +37,6 @@ import java.util.Map;
 public abstract class XingBaseService extends ProviderApiService implements Api {
 
     protected static final char MULTI_VALUE_SEPARATOR = ',';
-    
-    protected static final String BASE_URL = API_ROOT + "people/";
 
     @Inject
     @Xing
@@ -70,10 +68,23 @@ public abstract class XingBaseService extends ProviderApiService implements Api 
         return parameters;
     }
 
-
     @Override
     public String buildAbsoluteUri(String uri) {
-        return API_ROOT + uri;
+    	StringBuilder b = new StringBuilder(API_ROOT);
+    	b.append(uri);
+    	
+    	b.append("?");
+    	b.append("oauth_consumer_key={0}");
+    	b.append("&oauth_token={1}");
+    	b.append("&oauth_timestamp={2}");
+    	b.append("&oauth_nonce={3}");
+    	//b.append("oauth_consumer_key=");
+    	//b.append(service.get)
+    	//b.append("oauth_signature_method=HMAC-SHA1");
+    	//b.append("oauth_signature_method=PLAINTEXT");
+    	b.append("&oauth_version=1.0");
+    	
+        return b.toString();
     }
 
     @Override
@@ -82,6 +93,6 @@ public abstract class XingBaseService extends ProviderApiService implements Api 
     }
     
     public String getBaseUrl() {
-    	return BASE_URL;
+    	return API_ROOT;
     }
 }

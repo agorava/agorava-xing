@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Agorava
+ * Copyright 2016 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,8 @@
 
 package org.agorava.xing.model;
 
-import java.io.Serializable;
+import org.agorava.api.function.Nameable;
+import org.agorava.xing.function.HasFinalId;
 
 /**
  * Generic abstract class to define a basic user group
@@ -24,24 +25,12 @@ import java.io.Serializable;
  * @author Werner Keil
  */
 @SuppressWarnings("serial")
-public abstract class UserGroup implements Serializable {
-// TODO move to core API
-	
-    protected final String id;
+public abstract class UserGroup extends HasFinalId implements Nameable {
     protected final String name;
     
     protected UserGroup(String id, String name) {
-        this.id = id;
+    	super(id);
         this.name = name;
-    }
-
-    /**
-     * Permanent identifier against the social relationship for the life-time of the network account
-     *
-     * @return the user's social network key
-     */
-    public String getId() {
-        return id;
     }
 
     /**
@@ -55,7 +44,7 @@ public abstract class UserGroup implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
         return result;
     }
 
@@ -68,10 +57,10 @@ public abstract class UserGroup implements Serializable {
         if (getClass() != obj.getClass())
             return false;
         UserGroup other = (UserGroup) obj;
-        if (id == null) {
-            if (other.id != null)
+        if (getId() == null) {
+            if (other.getId() != null)
                 return false;
-        } else if (!id.equals(other.id))
+        } else if (!getId().equals(other.getId()))
             return false;
         return true;
     }

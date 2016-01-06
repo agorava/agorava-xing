@@ -16,6 +16,7 @@
 
 package org.agorava.xing;
 
+import org.agorava.spi.UserProfileService;
 import org.agorava.xing.model.XingProfile;
 
 /**
@@ -24,7 +25,7 @@ import org.agorava.xing.model.XingProfile;
  * @author Werner Keil
  * @author Antoine Sabot-Durand
  */
-public interface ProfileService {
+public interface ProfileService extends UserProfileService {
 
     /**
      * Retrieves the user's XING profile ID.

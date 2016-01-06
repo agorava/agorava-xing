@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Agorava
+ * Copyright 2016 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,13 @@
 
 package org.agorava.xing.model;
 
-
 /**
  * Birth Date which just contains year, month and day
  *
  * @author Werner Keil
  */
 public class BirthDate {
-// TODO consider abstraction level together with LinkedInDate
+// TODO consider abstraction level together with LinkedInDate or try use Date4J (more lightweight than JodaTime)
     private int day;
     protected int month;
     protected int year;
@@ -99,5 +98,4 @@ public class BirthDate {
     public void setYear(int value) {
         this.year = value;
     }
-
 }

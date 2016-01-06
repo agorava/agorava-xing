@@ -18,6 +18,7 @@ package org.agorava.xing.model;
 
 import org.agorava.spi.UserProfile;
 import org.agorava.xing.Xing;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
  * Model class containing a user's XING profile information.
@@ -159,7 +160,11 @@ public class XingProfile extends UserProfile {
 
 	@Override
 	public String getProfileImageUrl() {
-		return getPhotoUrls().getLarge();
+		if (getPhotoUrls() != null) {
+			return getPhotoUrls().getLarge();
+		} else {
+			return "";
+		}
 	}
 
 	@Override
@@ -170,5 +175,10 @@ public class XingProfile extends UserProfile {
 	@Override
 	public String getEmail() {
 		return activeEmail;
+	}
+	
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this).build();
 	}
 }
