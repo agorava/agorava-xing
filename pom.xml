@@ -22,8 +22,8 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>agorava-xing-api</module> <!-- 
-		<module>agorava-xing-cdi</module>  -->
+		<module>agorava-xing-api</module>
+		<module>agorava-xing-cdi</module>
 	</modules>
 
 	<developers>
