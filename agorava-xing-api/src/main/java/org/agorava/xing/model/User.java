@@ -19,13 +19,14 @@ package org.agorava.xing.model;
 import java.util.List;
 import java.util.Map;
 
-import org.agorava.xing.function.HasFinalId;
+import org.agorava.spi.UserProfile;
+import org.agorava.xing.Xing;
 
 /**
  * Model class representing a user.
  * @author Werner Keil
  */
-public class User extends HasFinalId {
+public class User extends UserProfile {
 	private String firstName;
 	private String lastName;
 	private String displayName;
@@ -51,7 +52,7 @@ public class User extends HasFinalId {
 	private PhotoUrls photoUrls;
 
 	public User(String id) {
-		super(id);
+		 super(id, Xing.class);
 	}
 
 	public String getFirstName() {
@@ -260,5 +261,30 @@ public class User extends HasFinalId {
 
 	public static enum PremiumService {
 		SEARCH, PRIVATEMESSAGES, NOADVERTISING
+	}
+
+	@Override
+	public String getLoginName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getFullName() {
+		return displayName;
+	}
+
+	@Override
+	public String getEmail() {
+		return activeEmail;
+	}
+
+	@Override
+	public String getProfileImageUrl() {
+		if (getPhotoUrls() != null) {
+			return getPhotoUrls().getLarge();
+		} else {
+			return "";
+		}
 	}
 }

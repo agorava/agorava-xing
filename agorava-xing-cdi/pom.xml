@@ -37,6 +37,11 @@
 		</dependency>
 
 		<dependency>
+			<groupId>com.sun.jersey.contribs.jersey-oauth</groupId>
+			<artifactId>oauth-signature</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>org.jboss.arquillian.junit</groupId>
 			<artifactId>arquillian-junit-container</artifactId>
 			<scope>test</scope>

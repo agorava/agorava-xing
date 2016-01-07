@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Agorava
+ * Copyright 2016 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 package org.agorava.xing;
 
 import org.agorava.spi.UserProfileService;
-import org.agorava.xing.model.XingProfile;
+import org.agorava.xing.model.User;
 
 /**
  * Operations on Profile API
@@ -46,20 +46,20 @@ public interface ProfileService extends UserProfileService {
      *
      * @return the user's profile data.
      */
-    XingProfile getUserProfile();
+    User getUserProfile();
 
     /**
      * Retrieves a profile by id.
      *
      * @return the user's profile data.
      */
-    XingProfile getProfileById(String id);
+    User getProfileById(String id);
 
     /**
      * Retrieves a profile by public url.
      *
      * @return the user's profile data.
      */
-    XingProfile getProfileByPublicUrl(String url);
+    User getProfileByPublicUrl(String url);
 
 }

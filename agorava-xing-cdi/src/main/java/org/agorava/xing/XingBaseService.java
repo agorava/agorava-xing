@@ -18,10 +18,13 @@ package org.agorava.xing;
 
 import static org.agorava.xing.XingApi.API_ROOT;
 
+import org.agorava.AgoravaConstants;
 import org.agorava.api.oauth.OAuthService;
 import org.agorava.api.rest.Api;
 import org.agorava.spi.ProviderApiService;
 import org.agorava.xing.Xing;
+
+import com.sun.jersey.oauth.signature.HMAC_SHA1;
 
 import javax.inject.Inject;
 
@@ -72,7 +75,7 @@ public abstract class XingBaseService extends ProviderApiService implements Api 
     public String buildAbsoluteUri(String uri) {
     	StringBuilder b = new StringBuilder(API_ROOT);
     	b.append(uri);
-    	
+    	/*
     	b.append("?");
     	b.append("oauth_consumer_key={0}");
     	b.append("&oauth_token={1}");
@@ -80,10 +83,16 @@ public abstract class XingBaseService extends ProviderApiService implements Api 
     	b.append("&oauth_nonce={3}");
     	//b.append("oauth_consumer_key=");
     	//b.append(service.get)
-    	//b.append("oauth_signature_method=HMAC-SHA1");
+    	b.append("&");
+    	b.append(AgoravaConstants.SIGN_METHOD);
+    	b.append("=");
+    	b.append(HMAC_SHA1.NAME);
     	//b.append("oauth_signature_method=PLAINTEXT");
     	b.append("&oauth_version=1.0");
-    	
+    	b.append("&");
+    	b.append(AgoravaConstants.SIGNATURE);
+    	b.append("={4}");
+    	*/
         return b.toString();
     }
 
