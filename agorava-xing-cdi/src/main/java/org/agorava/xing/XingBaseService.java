@@ -18,13 +18,10 @@ package org.agorava.xing;
 
 import static org.agorava.xing.XingApi.API_ROOT;
 
-import org.agorava.AgoravaConstants;
 import org.agorava.api.oauth.OAuthService;
 import org.agorava.api.rest.Api;
 import org.agorava.spi.ProviderApiService;
 import org.agorava.xing.Xing;
-
-import com.sun.jersey.oauth.signature.HMAC_SHA1;
 
 import javax.inject.Inject;
 
