@@ -9,7 +9,7 @@ abstract class AwardMixin {
 
 	@JsonCreator
 	 AwardMixin(@JsonProperty("name") String name,
-				@JsonProperty("date_awarded") String dateAwarded,
+				@JsonProperty("date_awarded") int dateAwarded,
 				@JsonProperty("url") String url) {
 		
 	}

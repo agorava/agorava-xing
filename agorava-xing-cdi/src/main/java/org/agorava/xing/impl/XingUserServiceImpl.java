@@ -18,15 +18,21 @@ package org.agorava.xing.impl;
 
 import static org.agorava.xing.XingApi.API_ROOT;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.inject.Named;
 
-import org.agorava.xing.ProfileService;
+import org.agorava.xing.XingUserService;
 import org.agorava.xing.Xing;
 import org.agorava.xing.XingBaseService;
 import org.agorava.xing.model.ProfileField;
 import org.agorava.xing.model.User;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * @author Werner Keil
@@ -34,8 +40,33 @@ import org.agorava.xing.model.User;
 
 @Named
 @Xing
-public class XingProfileServiceImpl extends XingBaseService implements ProfileService {
-	private static final Logger LOGGER = Logger.getLogger(XingProfileServiceImpl.class.getName());
+public class XingUserServiceImpl extends XingBaseService implements XingUserService {
+	/**
+     * Typed list of Xing User profile. This helps Jackson know which type to deserialize list contents into.
+     *
+     * @author Werner Keil
+     * @author Antoine Sabot-Durand
+     */
+    @SuppressWarnings("serial")
+    static class XingProfileList extends ArrayList<User> {
+    }
+
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    static class XingProfileUsersList {
+
+        private final List<User> list;
+
+        @JsonCreator
+        public XingProfileUsersList(@JsonProperty("users") List<User> list) {
+            this.list = list;
+        }
+
+        public List<User> getList() {
+            return list;
+        }
+    }
+    
+	private static final Logger LOGGER = Logger.getLogger(XingUserServiceImpl.class.getName());
     protected static final String BASE_URL = API_ROOT + "/users/";
 
     static {
@@ -100,9 +131,31 @@ public class XingProfileServiceImpl extends XingBaseService implements ProfileSe
     	}
         return new User("-1");
         */
-    	User user = getService().get(uri, User.class, true);
-    	LOGGER.info("Got " + user);
-    	return user;
+    	
+//    	return getService().get(buildUri(LOOKUP, "user_id", joinedIds), TwitterProfileList.class);
+//    	
+//    	User user = getService().get(uri, User.class, true);
+//    	LOGGER.info("Got " + user);
+//    	return user;
+    	
+    	XingProfileUsersList list = getService().get(uri, XingProfileUsersList.class, true);
+    	if (list != null) {
+    		List<User> users = list.getList();
+	    	if (users != null) {
+	    		LOGGER.info("Got " + users);
+	    		if (users.size() > 0) {
+	    			LOGGER.info("Found " + users.size() + " users.");
+	    			return users.get(0);
+	    		} else {
+	    			LOGGER.warning("No users found");
+	    		}
+	    	} else {
+	    		LOGGER.warning("No users found");
+	    	}
+    	} else {
+    		LOGGER.warning("No list found");
+    	}
+        return new User("-1");
     }
 
     @Override

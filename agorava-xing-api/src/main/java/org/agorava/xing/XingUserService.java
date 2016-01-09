@@ -25,7 +25,7 @@ import org.agorava.xing.model.User;
  * @author Werner Keil
  * @author Antoine Sabot-Durand
  */
-public interface ProfileService extends UserProfileService {
+public interface XingUserService extends UserProfileService {
 
     /**
      * Retrieves the user's XING profile ID.

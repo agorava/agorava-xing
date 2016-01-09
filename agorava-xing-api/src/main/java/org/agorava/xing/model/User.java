@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Agorava
+ * Copyright 2016 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import org.agorava.xing.Xing;
  * Model class representing a user.
  * @author Werner Keil
  */
+@SuppressWarnings("serial")
 public class User extends UserProfile {
 	private String firstName;
 	private String lastName;

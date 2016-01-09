@@ -1,11 +1,11 @@
 /*
- * Copyright 2013 Agorava
+ * Copyright 2016 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,17 +16,30 @@
 
 package org.agorava.xing.jackson;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.agorava.xing.model.XingProfile;
 
+import org.agorava.xing.model.User;
+
+import java.util.List;
+
+/**
+ * Holder for list of Xing User objects pulled from a JSON object's "users" property.
+ *
+ * @author Werner Keil
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
-abstract class XingProfilesMixin {
+class XingProfileUsersList {
 
-	@JsonCreator
-	XingProfilesMixin(@JsonProperty("users") List<XingProfile> users) {
-	}
+    private final List<User> list;
+
+    @JsonCreator
+    public XingProfileUsersList(@JsonProperty("users") List<User> list) {
+        this.list = list;
+    }
+
+    public List<User> getList() {
+        return list;
+    }
 }

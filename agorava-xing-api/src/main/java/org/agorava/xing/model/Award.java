@@ -26,7 +26,7 @@ public class Award {
 
     protected NamedUrl url;
     protected String name;
-    private long dateAwarded;
+    private int dateAwarded;
 
     /**
      * Gets the value of the url property.
@@ -93,10 +93,10 @@ public class Award {
      * 
      * @param value
      *     allowed object is
-     *     {@link long }
+     *     {@link int }
      *     
      */
-    public void setDateAwarded(long value) {
+    public void setDateAwarded(int value) {
         this.dateAwarded = value;
     }
 

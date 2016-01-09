@@ -10,9 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 abstract class BirthDateMixin {
 
     @JsonCreator
-     BirthDateMixin(@JsonProperty("day") Long day,
-                    @JsonProperty("year") Long year,
-                    @JsonProperty("month") Long month) {
+     BirthDateMixin(@JsonProperty("day") int day,
+                    @JsonProperty("year") int year,
+                    @JsonProperty("month") int month) {
 
     }
 

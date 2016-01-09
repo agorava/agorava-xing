@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Agorava
+ * Copyright 2016 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,11 +21,11 @@ import org.agorava.xing.model.*;
 import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 
-
 /**
  * Jackson module for registering mixin annotations against Xing model classes.
  * @author Werner Keil
  */
+@SuppressWarnings("serial")
 public class XingModule extends SimpleModule {
 
 	public XingModule() {
@@ -34,12 +34,10 @@ public class XingModule extends SimpleModule {
 
 	@Override
 	public void setupModule(SetupContext context) {
-		context.setMixInAnnotations(XingProfile.class, XingProfileMixin.class);
-		context.setMixInAnnotations(XingProfiles.class, XingProfilesMixin.class);
 		context.setMixInAnnotations(BirthDate.class, BirthDateMixin.class);
 		context.setMixInAnnotations(PhotoUrls.class, PhotoUrlsMixin.class);
 		context.setMixInAnnotations(BusinessAddress.class, BusinessAddressMixin.class);
-		context.setMixInAnnotations(Award.class, AwardMixin.class);
+//		context.setMixInAnnotations(Award.class, AwardMixin.class);
 		context.setMixInAnnotations(Company.class, CompanyMixin.class);
 		context.setMixInAnnotations(Conversation.class, ConversationMixin.class);
 		//context.setMixInAnnotations(ConversationNode.class, ConversationNodeMixin.class);
