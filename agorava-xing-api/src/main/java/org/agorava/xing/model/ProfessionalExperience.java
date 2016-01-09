@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Agorava
+ * Copyright 2016 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ public class ProfessionalExperience {
 
 	private Company primaryCompany;
 	private List<Company> nonPrimaryCompanies;
-//	private List<Award> awards;
+	private List<Award> awards;
 
     /**
      * Gets the value of the primaryCompany property.
@@ -84,9 +84,9 @@ public class ProfessionalExperience {
      *     {@link List<Award> }
      *     
      */
-//    public List<Award> getAwards() { FIXME try to add awards again (maybe type diff was only problem?)
-//        return awards;
-//    }
+    public List<Award> getAwards() { //FIXME try to add awards again
+        return awards;
+    }
 
     /**
      * Sets the value of the awards property.
@@ -96,8 +96,7 @@ public class ProfessionalExperience {
      *     {@link List<Award> }
      *     
      */
-//    public void setAwards(List<Award> value) {
-//        this.awards = value;
-//    }
-
+    public void setAwards(List<Award> value) {
+        this.awards = value;
+    }
 }

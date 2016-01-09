@@ -20,6 +20,6 @@ abstract class ProfessionalExperienceMixin {
 	@JsonProperty("non_primary_companies")
 	List<Company> nonPrimaryCompanies;
 	
-//	@JsonProperty("awards")
-//	List<Award> awards;
+	@JsonProperty("awards")
+	List<Award> awards;
 }

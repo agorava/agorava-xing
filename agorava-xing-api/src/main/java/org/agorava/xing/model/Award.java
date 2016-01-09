@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Agorava
+ * Copyright 2016 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,16 +16,18 @@
 
 package org.agorava.xing.model;
 
+import org.agorava.xing.function.HasName;
+
 /**
  * Award a user has won
  * 
  * @author Werner Keil
  *
  */
-public class Award {
+@SuppressWarnings("serial")
+public class Award extends HasName {
 
-    protected NamedUrl url;
-    protected String name;
+    private String url;
     private int dateAwarded;
 
     /**
@@ -33,10 +35,10 @@ public class Award {
      * 
      * @return
      *     possible object is
-     *     {@link NamedUrl }
+     *     {@link String }
      *     
      */
-    public NamedUrl getUrl() {
+    public String getUrl() {
         return url;
     }
 
@@ -45,35 +47,11 @@ public class Award {
      * 
      * @param value
      *     allowed object is
-     *     {@link NamedUrl }
+     *     {@link String }
      *     
      */
-    public void setUrl(NamedUrl value) {
+    public void setUrl(String value) {
         this.url = value;
-    }
-
-    /**
-     * Gets the value of the name property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Sets the value of the name property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setName(String value) {
-        this.name = value;
     }
 
     /**
@@ -81,10 +59,10 @@ public class Award {
      * 
      * @return
      *     possible object is
-     *     {@link long }
+     *     {@link int }
      *     
      */
-    public long getDateAwarded() {
+    public int getDateAwarded() {
         return dateAwarded;
     }
 

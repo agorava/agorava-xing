@@ -23,11 +23,12 @@ import org.agorava.xing.function.HasName;
  * 
  * @author Werner Keil
  *
+ * @deprecated Currently unused for Xing
  */
+@SuppressWarnings("serial")
 public class NamedUrl extends HasName {
-
+// TODO try to merge this in a more general way, e.g. with LinkedIn UrlResource
     protected String value;
-    protected String name;
 
     /**
      * Gets the value of the value property.

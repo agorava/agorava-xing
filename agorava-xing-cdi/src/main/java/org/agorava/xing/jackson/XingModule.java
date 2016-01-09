@@ -37,7 +37,7 @@ public class XingModule extends SimpleModule {
 		context.setMixInAnnotations(BirthDate.class, BirthDateMixin.class);
 		context.setMixInAnnotations(PhotoUrls.class, PhotoUrlsMixin.class);
 		context.setMixInAnnotations(BusinessAddress.class, BusinessAddressMixin.class);
-//		context.setMixInAnnotations(Award.class, AwardMixin.class);
+		context.setMixInAnnotations(Award.class, AwardMixin.class);
 		context.setMixInAnnotations(Company.class, CompanyMixin.class);
 		context.setMixInAnnotations(Conversation.class, ConversationMixin.class);
 		//context.setMixInAnnotations(ConversationNode.class, ConversationNodeMixin.class);
@@ -71,7 +71,7 @@ public class XingModule extends SimpleModule {
 		context.setMixInAnnotations(Users.class, UsersMixin.class);
 		context.setMixInAnnotations(ContactPaths.class, ContactPathsMixin.class);
 		context.setMixInAnnotations(ContactPathsNode.class, ContactPathsNodeMixin.class);
-
+		context.setMixInAnnotations(NamedUrl.class, NamedUrlMixin.class);
 		//context.setMixInAnnotations(NetworkActivitiesNode.class, NetworkActivitiesNodeMixin.class);
 		context.setMixInAnnotations(NetworkFeed.class, NetworkFeedMixin.class);
 		context.setMixInAnnotations(MetaComment.class, MetaCommentMixin.class);
